@@ -95,7 +95,7 @@ class Interpreter(object):
 def main():
 	while True:
 		try:
-			text=input('calc>')
+			text=input('calc_LL>')
 		except EOFError:
 			break
 		if not text:

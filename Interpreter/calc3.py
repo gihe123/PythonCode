@@ -114,7 +114,7 @@ class Interpreter(object):
 		self.current_token = self.get_next_token()
 
 		result=self.term()
-		while self.current_token.type in(PLUS,MINUS):
+		while self.current_token.type in(PLUS,MINUS,MULTI,DIVISION):
 			token=self.current_token
 			if token.type==PLUS:
 				self.eat(PLUS)
@@ -122,6 +122,13 @@ class Interpreter(object):
 			elif token.type==MINUS:
 				self.eat(MINUS)
 				result=result-self.term()
+			elif token.type==MULTI:
+				self.eat(MULTI)
+				result=result*self.term()
+			elif token.type==DIVISION:
+				self.eat(DIVISION)
+				result=result/self.term()
+
 		return result
 	
 def main():
