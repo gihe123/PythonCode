@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AddComputer</string>
+    <string name="action_settings">Settings</string>
+    <string name="screen">请输入加数和被加数：</string>
+    <string name="pluschar">         +          </string>
+    <string name="buttonTitle">计算</string>
+  
+
+</resources>
