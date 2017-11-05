@@ -36,7 +36,7 @@ class Lexer(object):
         self.current_char = self.text[self.pos]
  
     def error(self):
-        raise Exception('Invalid character')
+        print('Invalid character')
  
     def advance(self):
         """Advance the `pos` pointer and set the `current_char` variable."""
@@ -108,7 +108,7 @@ class Interpreter(object):
         self.current_token = self.lexer.get_next_token()
  
     def error(self):
-        raise Exception('Invalid syntax')
+        print('Invalid syntax')
  
     def eat(self, token_type):
         # compare the current token type with the passed token
@@ -119,6 +119,7 @@ class Interpreter(object):
             self.current_token = self.lexer.get_next_token()
         else:
             self.error()
+            self.current_token.type = EOF
  
     def factor(self):
         """factor : INTEGER | LPAREN expr RPAREN"""
